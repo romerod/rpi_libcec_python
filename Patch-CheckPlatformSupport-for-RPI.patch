@@ -1,0 +1,24 @@
+From 1ccbea0fb6449de34029eeaf620cb4f538602619 Mon Sep 17 00:00:00 2001
+Date: Sat, 30 Apr 2016 22:21:12 +0200
+Subject: [PATCH] Patch CheckPlatformSupport for RPI
+
+---
+ src/libcec/cmake/CheckPlatformSupport.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/libcec/cmake/CheckPlatformSupport.cmake b/src/libcec/cmake/CheckPlatformSupport.cmake
+index 77b24f7..7b77aaf 100644
+--- a/src/libcec/cmake/CheckPlatformSupport.cmake
++++ b/src/libcec/cmake/CheckPlatformSupport.cmake
+@@ -96,7 +96,7 @@ else()
+   # raspberry pi
+   find_library(RPI_BCM_HOST bcm_host "${RPI_LIB_DIR}")
+   check_library_exists(bcm_host bcm_host_init "${RPI_LIB_DIR}" HAVE_RPI_LIB)
+-  if (HAVE_RPI_LIB)
++  if (HAVE_RPI_LIB OR 1)
+     set(HAVE_RPI_API 1)
+     find_library(RPI_VCOS vcos "${RPI_LIB_DIR}")
+     find_library(RPI_VCHIQ_ARM vchiq_arm "${RPI_LIB_DIR}")
+-- 
+2.6.4.windows.1
+

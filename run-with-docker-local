@@ -1,0 +1,3 @@
+#!/bin/bash
+exec docker run -it --rm --name rpi-alpine-libcec-py --privileged rpi-alpine-libcec-py /bin/bash
+
